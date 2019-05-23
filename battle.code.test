@@ -1,0 +1,122 @@
+import java.util.Scanner;
+public class mainTest {
+       
+    
+    
+    public static int edmg = 0;
+         public static int dmg = 0;
+        public static int HP = 100;
+        public static int eHP = 40; 
+        public static int d10;
+        public static int escolher;
+    
+        
+        
+        
+                            public static void attack(){
+       
+        
+        
+        
+       while(HP>0){
+         System.out.println("Você ataca o adversário");
+            dmg = (int) (Math.random()*40);
+            System.out.println("Você causa "+dmg+" de dano");
+            eHP = eHP - dmg; 
+            
+            edmg = (int) (Math.random()*40);
+            System.out.println("O adversário te ataca com "+edmg+" de dano");
+            if (HP <= 0){
+                System.out.println("Você morreu");
+                 
+                break;
+            }
+            if (eHP <= 0){
+                System.out.println("Você ganhou");
+                
+            }
+            
+        
+        
+    }
+                            }
+                            public static void run(){
+                                
+                                
+                                
+                                
+                                
+    
+    System.out.println("Você escolheu correr, será rodado um d10, se você tirar acima de 6, foge, senão, toma um d40 de dano");
+    d10 = (int) (Math.random()*10);
+    System.out.println("Você tirou "+d10);
+    
+        if(d10>6){
+            System.out.println("Você fugiu");
+        }
+        else{
+        dmg = (int) (Math.random()*40);    
+            System.out.println("Você não fugiu e recebeu "+dmg+" de dano");
+            HP=HP-dmg;
+}
+                            }
+                            public static void potion(){
+                                
+                                
+                                
+                                
+    dmg = (int) (Math.random()*40);
+    System.out.println("Você curou 25 de HP e reebeu "+dmg+" de dano ao se distrair");                            
+                            }
+                            
+                            
+                            
+                            public static void choices(){
+                                
+                                
+                                
+                                
+                                Scanner leitor = new Scanner(System.in);
+   while(eHP > 0){
+   System.out.println("Você pode escolher: \n(1) - ATACAR\n(2) - CORRER\n(3)TOMAR POÇÃO DE CURA");  
+   escolher = leitor.nextInt();
+   
+   if(escolher == 1){
+      attack(); 
+   }
+   if(escolher == 2){
+      run(); 
+   }
+   if(escolher == 3){
+      potion(); 
+   }
+   System.out.println("Seu HP: "+HP+"\nHP do Inimigo: "+eHP);
+                            }
+                            }
+        
+       
+       
+    public static void main (String[] arg){
+       
+        
+          
+       System.out.println("Você achou um inimigo");
+       choices();
+      
+       
+       
+       
+    
+        
+        
+        
+        
+        
+        
+        
+        
+        
+    } 
+        
+        
+    }
